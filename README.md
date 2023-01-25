@@ -2,7 +2,7 @@
 
 <details>
   <summary>
-    👨‍💻 I'm a Front-end Web Developer who is passionate about building beautiful and functional websites.
+    👨‍💻 I'm a Software Developer who is passionate about building beautiful and functional applications.
   </summary>
   <br/>
   <div>
