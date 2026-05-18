@@ -1,100 +1,120 @@
-### Hi there, I'm Anouar 👋🏻
+<div align="center">
 
-<details>
-  <summary>
-    👨‍💻 I'm a Software Developer who is passionate about building beautiful and functional applications.
-  </summary>
-  <br/>
-  <div>
-    I work mainly with: <br />
-    <img src="https://img.shields.io/badge/HTML5-F16529?style=for-the-badge&logo=html5&logoColor=white" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white&textColor=white" />
-    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-    <img src="https://img.shields.io/badge/Sql-018bff?style=for-the-badge&logo=microsoft-access&logoColor=white" />
-    <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" />
-    <img src="https://img.shields.io/badge/Bash-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-    <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" />
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
-    <img src="https://img.shields.io/badge/tailwind-243c5a?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-    <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" />
-    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-    <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" />
-    <img src="https://img.shields.io/badge/VS%20Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
-  </div>
-</details>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1f2e,100:0d1117&height=120&section=header" width="100%"/>
 
-<details>
-  <summary>
-    💻 Interesting technologies which I'm going to learn in the future:
-  </summary>
-  <br/>
-  <div>
-    <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white">
-    <img src="https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white">
-    <img src="https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white" />
-    <img src="https://img.shields.io/badge/Semantic%20UI-35BDB2?style=for-the-badge&logo=semanticuireact&logoColor=white" />
-    <img src="https://img.shields.io/badge/Twine-1ED760?style=for-the-badge&logo=payoneer&logoColor=white" />
-    <img src="https://img.shields.io/badge/Sugarcube-F34E68?style=for-the-badge&logo=hack-the-box&logoColor=white" />
-    <img src="https://img.shields.io/badge/Phaser.js-F15B2A?style=for-the-badge&logo=starship&logoColor=white" />
-    <img src="https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black" />
-    <img src="https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-    <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" />
-    <img src="https://img.shields.io/badge/Sanity-9b342f?style=for-the-badge&logo=Sanity&logoColor=white" />
-  </div>
-</details>
+# Anouar DADAS
+### Senior Fullstack Engineer 🇲🇦
 
-<details>
-  <summary>🌐 My Personal Website / Additional links: </summary>
-  <br/>
-  <div>
-    <a href="https://casualanouar.com">www.anouardadas.com</a> -- Work on progress (🌐)
-    <br/>
-    <a href="https://www.linkedin.com/in/anouar-dadas/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-    <a href="https://www.instagram.com/casualanouar/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
-  </div>
-</details>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Anouar_DADAS-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anouar-dadas/)
+[![GitHub followers](https://img.shields.io/github/followers/CasualAnouar?style=flat-square&logo=github&color=1f6feb)](https://github.com/CasualAnouar)
+[![Profile Views](https://komarev.com/ghpvc/?username=CasualAnouar&style=flat-square&color=1f6feb)](https://github.com/CasualAnouar)
 
-<details>
-  <summary>📈 My GitHub Stats: </summary>
-  <br/>
-  <div>
-     <img src="https://github-readme-stats.vercel.app/api?username=CasualAnouar&count_private=true&show_icons=true&include_all_commits=true&theme=dark" alt="CasualAnouar's Github Stats" />
-     <br/>
-     <br/>
-     <div>
-        <div>
-          <a href="https://github.com/CasualAnouar">
-            <img src="https://img.shields.io/github/followers/CasualAnouar.svg?style=social&label=Follow"/>
-          </a>
-        </div>
-     </div>
-  </div>
-</details>
+</div>
 
-<details>
-  <summary>
-    💬 Inspirational quotes that keep me motivated to code:
-  </summary>
-  <br/>
-  <ul>
-    <li id="steve-jobs">
-      <i>
-        I think everybody in this country should learn how to program a computer because it teaches you how to think. - Steve Jobs
-      </i>
-    </li>
-    <br/>
-    <li id="bill-gates">
-      <i>
-        Measuring programming progress by lines of code is like measuring aircraft building progress by weight. - Bill Gates
-      </i>
-    </li>
-  </ul>
-  <br/>
-</details>
+---
+
+## 👨‍💻 About Me
+
+Software Developer at **[SOREC](https://www.sorec.ma)** *(Société Royale d'Encouragement du Cheval)* — building enterprise-grade web applications. My day-to-day revolves around Angular frontends, Spring Boot microservices, and Liferay DXP portal solutions, integrated into large-scale digital platforms.
+
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+![Angular](https://img.shields.io/badge/Angular_12--21+-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### UI Frameworks
+![PrimeNG](https://img.shields.io/badge/PrimeNG-DD0031?style=for-the-badge&logo=primeng&logoColor=white)
+![Angular Material](https://img.shields.io/badge/Angular_Material-757575?style=for-the-badge&logo=material-design&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material_UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+### Backend
+![Java](https://img.shields.io/badge/Java_J2EE-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+
+### Auth & APIs
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![OAuth2](https://img.shields.io/badge/OAuth2/SSO-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
+
+### Enterprise & Portal
+![Liferay DXP](https://img.shields.io/badge/Liferay_DXP_7.4-1ABC9C?style=for-the-badge&logo=liferay&logoColor=white)
+![OSGi](https://img.shields.io/badge/OSGi-6E4B7B?style=for-the-badge&logoColor=white)
+![Microservices](https://img.shields.io/badge/Microservices-0052CC?style=for-the-badge&logo=apachekafka&logoColor=white)
+
+### Databases
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+
+### DevOps & Tools
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitLab CI/CD](https://img.shields.io/badge/GitLab_CI/CD-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+
+---
+
+## 🚀 Active Projects
+
+| Project | Description | Stack |
+|---|---|---|
+| [🔍 lost-and-found](https://github.com/CasualAnouar/lost-and-found) | PFE — Lost & found platform | `In progress` |
+| [🎮 InFamouss](https://github.com/CasualAnouar/InFamouss) | Community website for InFamouss the streamer | `Web` |
+| [🌸 naroma-shop](https://github.com/CasualAnouar/naroma-shop) | Perfume e-commerce for InFamouss | `Web` |
+| [🤖 nyx-bot](https://github.com/CasualAnouar/nyx-bot) | Discord bot for the Nyx community | `Bot` |
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=CasualAnouar&theme=github-dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" />
+
+</div>
+
+---
+
+## 🌱 Currently Exploring
+
+- **Kubernetes** — container orchestration for microservices deployments
+- **GraphQL** — flexible API layer over REST
+- **React Native** — cross-platform mobile development
+
+---
+
+## 💬 Languages
+
+🇲🇦 **Arabic** — Native &nbsp;|&nbsp; 🇫🇷 **French** — Professional &nbsp;|&nbsp; 🇬🇧 **English** — Professional
+
+---
+
+<div align="center">
+
+*"Measuring programming progress by lines of code is like measuring aircraft building progress by weight."*  
+— Bill Gates
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1f2e,100:0d1117&height=80&section=footer" width="100%"/>
+
+</div>
