@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: $bg-overlay;
+}
+
+.modal {
+  width: 100%;
+  max-width: 470px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 26px;
+  background: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-modal;
+}
+
+.modal-title {
+  font-size: $fs-18;
+  font-weight: $fw-bold;
+  letter-spacing: $ls-tight;
+}
+
+.modal-desc {
+  margin-top: 8px;
+  font-size: $fs-13;
+  line-height: $lh-19;
+  color: $text-muted;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.modal-note {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: $radius-md;
+  background: $bg-subtle;
+  font-size: $fs-12;
+  line-height: $lh-17;
+  color: $text-muted;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}

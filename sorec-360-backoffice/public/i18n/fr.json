@@ -1,0 +1,246 @@
+{
+  "brand": {
+    "name": "SOREC 360",
+    "subtitle": "Back-office Communauté"
+  },
+  "nav": {
+    "section": {
+      "pilotage": "Pilotage",
+      "moderation": "Modération",
+      "configuration": "Configuration"
+    },
+    "overview": "Vue d'ensemble",
+    "queue": "File de modération",
+    "topics": "Sujets & discussions",
+    "members": "Membres",
+    "settings": "Paramètres"
+  },
+  "role": {
+    "admin": "Administrateur",
+    "moderator-f": "Modératrice",
+    "moderator-m": "Modérateur",
+    "support": "Support"
+  },
+  "topbar": {
+    "searchPlaceholder": "Rechercher un membre, un sujet…",
+    "help": "Aide",
+    "notifications": "Notifications"
+  },
+  "period": {
+    "today": "Aujourd'hui",
+    "week": "Cette semaine",
+    "month": "Ce mois",
+    "last30": "30 derniers jours",
+    "year": "Cette année",
+    "all": "Tous"
+  },
+  "priority": {
+    "urgent": "Urgent",
+    "high": "Élevée",
+    "medium": "Moyenne"
+  },
+  "decision": {
+    "approved": "Approuvé",
+    "deleted": "Supprimé",
+    "blocked": "Bloqué"
+  },
+  "topicStatus": {
+    "pinned": "Épinglé",
+    "published": "Publié",
+    "hidden": "Masqué",
+    "closed": "Fermé"
+  },
+  "categoryStatus": {
+    "published": "Publiée",
+    "hidden": "Masquée"
+  },
+  "memberStatus": {
+    "active": "Actif",
+    "blocked": "Bloqué"
+  },
+  "tier": {
+    "at-risk": "à risque",
+    "watch": "à surveiller",
+    "standard": "standard",
+    "trusted": "fiable"
+  },
+  "common": {
+    "reportCount": "{{count}} signalements",
+    "justNow": "à l'instant"
+  },
+  "action": {
+    "approve": "Approuver",
+    "delete": "Supprimer",
+    "block": "Bloquer",
+    "ban": "Bannir",
+    "hide": "Masquer",
+    "reactivate": "Réactiver",
+    "cancel": "Annuler",
+    "view": "Consulter",
+    "pin": "Épingler",
+    "more": "Plus d'actions",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "toggleVisibility": "Changer la visibilité"
+  },
+  "table": {
+    "topic": "Sujet",
+    "author": "Auteur",
+    "category": "Catégorie",
+    "views": "Vues",
+    "replies": "Rép.",
+    "reportedContent": "Contenu signalé",
+    "reason": "Motif",
+    "reports": "Signal.",
+    "priority": "Priorité",
+    "received": "Reçu",
+    "actions": "Actions",
+    "status": "Statut",
+    "decision": "Décision",
+    "handledAt": "Traité",
+    "handledBy": "Par",
+    "member": "Membre",
+    "topics": "Sujets",
+    "messages": "Messages",
+    "reputation": "Réputation",
+    "user": "Utilisateur",
+    "role": "Rôle",
+    "permissions": "Permissions"
+  },
+  "dashboard": {
+    "greeting": "Bonjour {{name}} 👋",
+    "subtitle": "L'essentiel pour administrer la communauté des turfistes SOREC au quotidien.",
+    "period": "Période",
+    "kpi": {
+      "activeMembers": "Membres actifs",
+      "activeMembersFoot": "sur 12 184 inscrits",
+      "topics": "Sujets publiés",
+      "topicsFoot": "5 catégories publiées",
+      "messages": "Messages postés",
+      "messagesFoot": "7,6 messages par sujet",
+      "pendingReports": "Signalements en attente",
+      "pendingReportsAction": "Traiter maintenant"
+    },
+    "priorityTitle": "À modérer en priorité",
+    "prioritySubtitle": "Triés par priorité, puis du plus ancien au plus récent",
+    "goToQueue": "File de modération",
+    "latestTopicsTitle": "Derniers sujets",
+    "latestTopicsSubtitle": "Publications récentes de la communauté",
+    "allTopics": "Tous les sujets"
+  },
+  "queue": {
+    "title": "File de modération",
+    "subtitle": "Les contenus signalés par la communauté. Chaque décision est enregistrée dans le journal de modération.",
+    "tab": {
+      "pending": "En attente",
+      "handled": "Traités"
+    },
+    "searchPlaceholder": "Rechercher un contenu, un auteur, un motif…",
+    "sortBy": "Trier par :",
+    "sortPriority": "Priorité",
+    "footPending": "Affichage de 1–{{count}} sur {{count}} signalements en attente",
+    "footHandled": "Affichage de 1–{{count}} sur {{count}} signalements traités",
+    "footNote": "Toute décision est horodatée et attribuée à son auteur.",
+    "emptyPending": "Aucun signalement en attente.",
+    "emptyHandled": "Aucun signalement traité.",
+    "toast": {
+      "approved": "Contenu de {{author}} approuvé.",
+      "deleted": "Contenu de {{author}} supprimé.",
+      "blocked": "{{author}} a été bloqué."
+    }
+  },
+  "topics": {
+    "title": "Sujets & discussions",
+    "subtitle": "Tous les fils publiés par la communauté. Un sujet a un seul statut à la fois : publié, épinglé, fermé ou masqué.",
+    "category": "Catégorie",
+    "allCategories": "Toutes",
+    "status": "Statut",
+    "allStatuses": "Tous",
+    "sortBy": "Trier par",
+    "sortReports": "Plus signalés",
+    "sortViews": "Plus vus",
+    "sortReplies": "Plus commentés",
+    "searchPlaceholder": "Rechercher un sujet, un auteur…",
+    "foot": "Affichage de 1–{{shown}} sur {{total}} sujets",
+    "empty": "Aucun sujet ne correspond à ces filtres."
+  },
+  "topicDetail": {
+    "subtitle": "Modérez le fil message par message. Seuls les messages signalés peuvent être masqués, supprimés ou entraîner un bannissement.",
+    "topicAuthor": "Auteur du sujet",
+    "infoTitle": "Informations du sujet",
+    "createdAt": "Créé le",
+    "authorTitle": "Auteur du sujet",
+    "memberSince": "Membre depuis",
+    "notFound": "Ce sujet est introuvable.",
+    "backToTopics": "Retour aux sujets",
+    "toast": {
+      "hide": "Message de {{author}} masqué.",
+      "delete": "Message de {{author}} supprimé.",
+      "ban": "{{author}} a été banni."
+    }
+  },
+  "members": {
+    "title": "Membres de la communauté",
+    "subtitle": "Consultez et administrez les membres. Le score de réputation agrège l'activité publiée et les signalements reçus.",
+    "kpi": {
+      "registered": "Membres inscrits",
+      "registeredFoot": "échantillon de démonstration",
+      "active": "Actifs (7 j)",
+      "activeFoot": "60 % de la base",
+      "blocked": "Bloqués",
+      "blockedFoot": "ne peuvent plus publier"
+    },
+    "sortBy": "Trier par",
+    "sortReports": "Signalements reçus",
+    "sortMessages": "Messages publiés",
+    "sortReputation": "Réputation",
+    "status": "Statut",
+    "allStatuses": "Tous",
+    "searchPlaceholder": "Rechercher un pseudo…",
+    "registeredOn": "Inscrit le",
+    "foot": "Affichage de 1–{{shown}} sur {{total}} membres",
+    "empty": "Aucun membre ne correspond à ces filtres.",
+    "toast": {
+      "blocked": "{{handle}} ne peut plus publier.",
+      "reactivated": "{{handle}} peut de nouveau publier."
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérez les personnes qui administrent la communauté et structurez les catégories de discussion.",
+    "usersTitle": "Gestion des utilisateurs",
+    "usersSubtitle": "Équipe d'administration · {{count}} membres",
+    "inviteUser": "Inviter un utilisateur",
+    "you": "vous",
+    "categoriesTitle": "Catégories de discussion",
+    "categoriesSubtitle": "Structurez les échanges de la communauté",
+    "categoriesFoot": "{{count}} catégories · {{published}} publiées",
+    "invite": {
+      "title": "Inviter un utilisateur",
+      "description": "La personne recevra un lien d'activation sur son adresse professionnelle. Elle définira son mot de passe elle-même.",
+      "confirm": "Envoyer l'invitation",
+      "name": "Nom complet",
+      "namePlaceholder": "Prénom Nom",
+      "email": "Adresse e-mail professionnelle",
+      "roleHint": "Modération des contenus & des membres",
+      "note": "RG2.5 — l'invitation et le rôle attribué sont journalisés à votre nom.",
+      "defaultName": "Le nouvel utilisateur"
+    },
+    "category": {
+      "title": "Ajouter une catégorie",
+      "description": "Une nouvelle catégorie apparaît dans le fil de la communauté dès qu'elle est publiée.",
+      "confirm": "Créer la catégorie",
+      "name": "Nom de la catégorie",
+      "namePlaceholder": "Ex. Pronostics du week-end",
+      "color": "Couleur d'identification",
+      "published": "Publiée — visible par la communauté",
+      "hidden": "Masquée — invisible pour la communauté",
+      "note": "RG6.x — le nom d'une catégorie doit être unique. RG2.5 — la création est journalisée à votre nom."
+    },
+    "toast": {
+      "invited": "Invitation envoyée à {{name}}.",
+      "categoryAdded": "« {{label}} » est publiée.",
+      "categoryRemoved": "« {{label}} » a été supprimée."
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use 'variables' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  min-height: 100vh;
+  background: $bg-sidebar;
+  border-right: 1px solid $border;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  max-height: 100vh;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 18px 21px;
+  background: $white;
+  border-bottom: 1px solid $border;
+}
+
+.brand-mark {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.brand-name {
+  font-size: $fs-16;
+  font-weight: $fw-bold;
+  line-height: $lh-17;
+  letter-spacing: $ls-tight;
+}
+
+.brand-sub {
+  font-size: $fs-12;
+  color: $text-muted;
+  line-height: 1.1;
+}
+
+.nav {
+  flex: 1;
+  padding: 6px 12px;
+  overflow-y: auto;
+}
+
+.nav-label {
+  padding: 18px 10px 8px;
+  font-size: 11px;
+  font-weight: $fw-bold;
+  letter-spacing: $ls-upper;
+  text-transform: uppercase;
+  color: $text-subtle;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: $row-height;
+  padding: 9px 12px;
+  border-radius: $radius-pill;
+  color: $text-primary;
+  font-size: $fs-14;
+  font-weight: $fw-medium;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover:not(.is-active) {
+    background: rgba(47, 53, 57, 0.06);
+  }
+
+  &.is-active {
+    background: $sorec-red;
+    color: $white;
+    font-weight: $fw-semibold;
+  }
+}
+
+.nav-item-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: $radius-pill;
+  background: $sorec-red;
+  color: $white;
+  font-size: $fs-12;
+  font-weight: $fw-bold;
+
+  .is-active & {
+    background: $white;
+    color: $sorec-red;
+  }
+}
+
+.sidebar-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 16px;
+  border-top: 1px solid $border;
+}
+
+.who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.who-name {
+  font-size: $fs-13;
+  font-weight: $fw-semibold;
+}
+
+.who-role {
+  font-size: $fs-12;
+  color: $text-muted;
+}

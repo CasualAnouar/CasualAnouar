@@ -1,0 +1,174 @@
+@if (topic(); as topic) {
+  <nav class="crumb">
+    <span>{{ 'nav.section.moderation' | translate }}</span>
+    <app-icon name="chevron-right" [size]="13" />
+    <a routerLink="/moderation/sujets">{{ 'nav.topics' | translate }}</a>
+    <app-icon name="chevron-right" [size]="13" />
+    <span class="here">{{ topic.title }}</span>
+  </nav>
+
+  <div class="page-head">
+    <h1>{{ topic.title }}</h1>
+    <p class="page-sub">{{ 'topicDetail.subtitle' | translate }}</p>
+  </div>
+
+  <div class="detail-grid">
+    <section class="thread">
+      @for (message of messages(); track message.id) {
+        <article class="msg" [class.is-reported]="message.reportCount > 0">
+          <app-avatar
+            [label]="message.author.initials"
+            [tone]="message.author.tone"
+            [size]="38"
+          />
+
+          <div class="msg-body">
+            <header class="msg-head">
+              <span class="msg-author">{{ message.author.handle }}</span>
+              @if (message.isTopicAuthor) {
+                <span class="tag tag-author">{{ 'topicDetail.topicAuthor' | translate }}</span>
+              }
+              @if (message.authorBlocked) {
+                <span class="tag tag-blocked">{{ 'memberStatus.blocked' | translate }}</span>
+              }
+              <span class="msg-when">{{ message.postedAt }}</span>
+              @if (message.reportCount > 0) {
+                <span class="msg-reports">
+                  <app-icon name="flag" [size]="13" />
+                  {{ 'common.reportCount' | translate: { count: message.reportCount } }}
+                </span>
+              }
+            </header>
+
+            <p class="msg-text">{{ message.body }}</p>
+
+            <footer class="msg-foot">
+              <span class="likes">
+                <app-icon name="thumb" [size]="15" />
+                {{ message.likes }}
+              </span>
+
+              @if (message.reportCount > 0) {
+                <div class="msg-actions">
+                  <button
+                    type="button"
+                    class="btn btn-outline"
+                    (click)="act(message, 'hide')"
+                  >
+                    <app-icon name="eye-off" [size]="15" />
+                    {{ 'action.hide' | translate }}
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger-soft"
+                    (click)="act(message, 'delete')"
+                  >
+                    <app-icon name="trash" [size]="15" />
+                    {{ 'action.delete' | translate }}
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    (click)="act(message, 'ban')"
+                  >
+                    <app-icon name="ban" [size]="15" />
+                    {{ 'action.ban' | translate }}
+                  </button>
+                </div>
+              }
+            </footer>
+          </div>
+        </article>
+      }
+    </section>
+
+    <aside class="side">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>{{ 'topicDetail.infoTitle' | translate }}</h2>
+        </div>
+        <dl class="info-list">
+          <div class="info-row">
+            <dt>{{ 'table.category' | translate }}</dt>
+            <dd>
+              <span class="cat">
+                <i class="bullet" [style.background]="topic.category.color"></i>
+                {{ topic.category.label }}
+              </span>
+            </dd>
+          </div>
+          <div class="info-row">
+            <dt>{{ 'table.status' | translate }}</dt>
+            <dd>{{ statusKey(topic.status) | translate }}</dd>
+          </div>
+          <div class="info-row">
+            <dt>{{ 'topicDetail.createdAt' | translate }}</dt>
+            <dd>{{ topic.createdAt }}</dd>
+          </div>
+          <div class="info-row">
+            <dt>{{ 'table.replies' | translate }}</dt>
+            <dd>{{ topic.replies }}</dd>
+          </div>
+          <div class="info-row">
+            <dt>{{ 'table.views' | translate }}</dt>
+            <dd>{{ topic.views }}</dd>
+          </div>
+          <div class="info-row">
+            <dt>{{ 'table.reports' | translate }}</dt>
+            <dd>{{ topic.reports }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>{{ 'topicDetail.authorTitle' | translate }}</h2>
+        </div>
+        <div class="author-card">
+          <div class="author-id">
+            <app-avatar
+              [label]="authorProfile().author.initials"
+              [tone]="authorProfile().author.tone"
+              [size]="40"
+            />
+            <div>
+              <p class="author-handle">{{ authorProfile().author.handle }}</p>
+              <p class="author-since">
+                {{ 'topicDetail.memberSince' | translate }}
+                {{ authorProfile().memberSince }}
+              </p>
+            </div>
+          </div>
+
+          <div class="author-stats">
+            <div class="stat">
+              <span class="stat-value">{{ authorProfile().messages }}</span>
+              <span class="stat-label">{{ 'table.messages' | translate }}</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">{{ authorProfile().reports }}</span>
+              <span class="stat-label">{{ 'table.reports' | translate }}</span>
+            </div>
+          </div>
+
+          <div class="reputation">
+            <p class="rep-value">
+              <strong>{{ authorProfile().reputation }}</strong>
+              <span>/ 100 · {{ authorProfile().reputationLabel }}</span>
+            </p>
+            <div class="rep-bar">
+              <span [style.width.%]="authorProfile().reputation"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+} @else {
+  <div class="not-found">
+    <p>{{ 'topicDetail.notFound' | translate }}</p>
+    <a class="btn btn-primary" routerLink="/moderation/sujets">
+      {{ 'topicDetail.backToTopics' | translate }}
+    </a>
+  </div>
+}

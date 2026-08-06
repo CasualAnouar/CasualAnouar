@@ -1,0 +1,143 @@
+<nav class="crumb">
+  <span>{{ 'nav.section.pilotage' | translate }}</span>
+  <app-icon name="chevron-right" [size]="13" />
+  <span class="here">{{ 'nav.overview' | translate }}</span>
+</nav>
+
+<div class="page-head">
+  <h1>{{ 'dashboard.greeting' | translate: { name: currentUser().firstName } }}</h1>
+  <p class="page-sub">{{ 'dashboard.subtitle' | translate }}</p>
+</div>
+
+<section class="filter-block">
+  <p class="field-label">{{ 'dashboard.period' | translate }}</p>
+  <div class="chips">
+    @for (period of periods(); track period.id) {
+      <button
+        type="button"
+        class="chip"
+        [class.is-active]="selectedPeriod() === period.id"
+        (click)="selectPeriod(period.id)"
+      >
+        {{ period.label | translate }}
+      </button>
+    }
+  </div>
+</section>
+
+<section class="kpis">
+  @for (kpi of kpis(); track kpi.id) {
+    <div class="kpi" [class]="'kpi-' + kpi.tone">
+      <div class="kpi-head">
+        <app-icon [name]="kpi.icon" [size]="17" />
+        <span class="k-label">{{ kpi.label | translate }}</span>
+      </div>
+      <p class="k-value">{{ kpi.value }}</p>
+      @if (kpi.actionRoute) {
+        <a class="k-action" [routerLink]="kpi.actionRoute">
+          {{ kpi.foot | translate }}
+          <app-icon name="chevron-right" [size]="14" />
+        </a>
+      } @else {
+        <p class="k-foot">{{ kpi.foot | translate }}</p>
+      }
+    </div>
+  }
+</section>
+
+<section class="grid">
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>{{ 'dashboard.priorityTitle' | translate }}</h2>
+        <p class="panel-sub">{{ 'dashboard.prioritySubtitle' | translate }}</p>
+      </div>
+      <a class="panel-link" routerLink="/moderation/file">
+        {{ 'dashboard.goToQueue' | translate }}
+        <app-icon name="chevron-right" [size]="14" />
+      </a>
+    </div>
+
+    <ul class="priority-list">
+      @for (item of priorityItems(); track item.rank) {
+        <li class="priority-row">
+          <span class="rank">{{ item.rank }}</span>
+          <app-avatar
+            [label]="item.author.initials"
+            [tone]="item.author.tone"
+            [size]="30"
+          />
+          <div class="priority-body">
+            <p class="priority-text">
+              <strong>{{ item.reason }}</strong> — {{ item.excerpt }}
+            </p>
+            <p class="priority-meta">
+              {{ item.author.handle }} ·
+              {{ 'common.reportCount' | translate: { count: item.reportCount } }} ·
+              {{ item.receivedAt }}
+            </p>
+          </div>
+          <span class="priority-flag">
+            <app-icon name="alert-circle" [size]="15" />
+            {{ priorityLabel(item.priority) | translate }}
+          </span>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>{{ 'dashboard.latestTopicsTitle' | translate }}</h2>
+        <p class="panel-sub">{{ 'dashboard.latestTopicsSubtitle' | translate }}</p>
+      </div>
+      <a class="panel-link" routerLink="/moderation/sujets">
+        {{ 'dashboard.allTopics' | translate }}
+        <app-icon name="chevron-right" [size]="14" />
+      </a>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>{{ 'table.topic' | translate }}</th>
+          <th>{{ 'table.author' | translate }}</th>
+          <th class="hide-sm">{{ 'table.category' | translate }}</th>
+          <th class="num">{{ 'table.views' | translate }}</th>
+          <th class="num">{{ 'table.replies' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (topic of latestTopics(); track topic.id) {
+          <tr>
+            <td>
+              <a class="t-title" [routerLink]="['/moderation/sujets', topic.id]">
+                {{ topic.title }}
+              </a>
+              <p class="t-when">{{ topic.postedAt }}</p>
+            </td>
+            <td>
+              <span class="author">
+                <app-avatar
+                  [label]="topic.author.initials"
+                  [tone]="topic.author.tone"
+                  [size]="30"
+                />
+                {{ topic.author.handle }}
+              </span>
+            </td>
+            <td class="hide-sm">
+              <span class="cat">
+                <i class="bullet" [style.background]="topic.category.color"></i>
+                {{ topic.category.label }}
+              </span>
+            </td>
+            <td class="num">{{ topic.views }}</td>
+            <td class="num">{{ topic.replies }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

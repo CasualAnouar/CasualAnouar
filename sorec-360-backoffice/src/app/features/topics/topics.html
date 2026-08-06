@@ -1,0 +1,171 @@
+<app-page-header
+  section="nav.section.moderation"
+  current="nav.topics"
+  title="topics.title"
+  subtitle="topics.subtitle"
+/>
+
+<div class="filters">
+  <div class="filter">
+    <label class="field-label" for="f-category">{{ 'topics.category' | translate }}</label>
+    <div class="field select">
+      <select
+        id="f-category"
+        [value]="categoryFilter()"
+        (change)="categoryFilter.set($any($event.target).value)"
+      >
+        <option value="all">{{ 'topics.allCategories' | translate }}</option>
+        @for (category of categories(); track category.id) {
+          <option [value]="category.id">{{ category.label }}</option>
+        }
+      </select>
+      <app-icon name="chevron-down" [size]="16" />
+    </div>
+  </div>
+
+  <div class="filter">
+    <label class="field-label" for="f-status">{{ 'topics.status' | translate }}</label>
+    <div class="field select">
+      <select
+        id="f-status"
+        [value]="statusFilter()"
+        (change)="statusFilter.set($any($event.target).value)"
+      >
+        <option value="all">{{ 'topics.allStatuses' | translate }}</option>
+        @for (status of statuses; track status) {
+          <option [value]="status">{{ statusKey(status) | translate }}</option>
+        }
+      </select>
+      <app-icon name="chevron-down" [size]="16" />
+    </div>
+  </div>
+
+  <div class="filter">
+    <label class="field-label" for="f-sort">{{ 'topics.sortBy' | translate }}</label>
+    <div class="field select">
+      <select id="f-sort" [value]="sort()" (change)="sort.set($any($event.target).value)">
+        <option value="reports">{{ 'topics.sortReports' | translate }}</option>
+        <option value="views">{{ 'topics.sortViews' | translate }}</option>
+        <option value="replies">{{ 'topics.sortReplies' | translate }}</option>
+      </select>
+      <app-icon name="chevron-down" [size]="16" />
+    </div>
+  </div>
+
+  <label class="field filter-search">
+    <app-icon name="search" [size]="17" />
+    <input
+      type="search"
+      [placeholder]="'topics.searchPlaceholder' | translate"
+      [value]="search()"
+      (input)="onSearch($any($event.target).value)"
+    />
+  </label>
+</div>
+
+<div class="panel">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>{{ 'table.topic' | translate }}</th>
+        <th>{{ 'table.author' | translate }}</th>
+        <th class="hide-md">{{ 'table.category' | translate }}</th>
+        <th class="num">{{ 'table.replies' | translate }}</th>
+        <th class="num">{{ 'table.views' | translate }}</th>
+        <th class="num">{{ 'table.reports' | translate }}</th>
+        <th>{{ 'table.status' | translate }}</th>
+        <th class="right">{{ 'table.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (topic of rows(); track topic.id) {
+        <tr>
+          <td class="cell-topic">
+            <a class="t-title" [routerLink]="['/moderation/sujets', topic.id]">
+              {{ topic.title }}
+            </a>
+            <p class="t-excerpt">« {{ topic.excerpt }} »</p>
+          </td>
+          <td>
+            <span class="author">
+              <app-avatar
+                [label]="topic.author.initials"
+                [tone]="topic.author.tone"
+                [size]="30"
+              />
+              {{ topic.author.handle }}
+            </span>
+          </td>
+          <td class="hide-md">
+            <span class="cat">
+              <i class="bullet" [style.background]="topic.category.color"></i>
+              {{ topic.category.label }}
+            </span>
+          </td>
+          <td class="num">{{ topic.replies }}</td>
+          <td class="num">{{ topic.views }}</td>
+          <td class="num">
+            @if (topic.reports > 0) {
+              <span class="flag-count">
+                <app-icon name="flag" [size]="14" />
+                {{ topic.reports }}
+              </span>
+            } @else {
+              <span class="dash">—</span>
+            }
+          </td>
+          <td>
+            <span class="pill" [class]="statusClass(topic.status)">
+              {{ statusKey(topic.status) | translate }}
+            </span>
+          </td>
+          <td class="right">
+            <div class="row-actions">
+              <a
+                class="icon-btn"
+                [routerLink]="['/moderation/sujets', topic.id]"
+                [attr.aria-label]="'action.view' | translate"
+              >
+                <app-icon name="eye" [size]="16" />
+              </a>
+              <button
+                type="button"
+                class="icon-btn"
+                [class.is-active]="topic.status === 'pinned'"
+                [attr.aria-label]="'action.pin' | translate"
+              >
+                <app-icon name="pin" [size]="16" />
+              </button>
+              <button
+                type="button"
+                class="icon-btn"
+                [attr.aria-label]="'action.more' | translate"
+              >
+                <app-icon name="more" [size]="16" />
+              </button>
+            </div>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="8" class="empty">{{ 'topics.empty' | translate }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="panel-foot">
+    <span>
+      {{ 'topics.foot' | translate: { shown: rows().length, total: totalCount } }}
+    </span>
+    <div class="pager">
+      <button type="button" class="icon-btn" disabled>
+        <app-icon name="chevron-left" [size]="16" />
+      </button>
+      <span class="pager-label">1 / 2</span>
+      <button type="button" class="icon-btn">
+        <app-icon name="chevron-right" [size]="16" />
+      </button>
+    </div>
+  </div>
+</div>

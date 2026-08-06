@@ -1,0 +1,338 @@
+@use 'variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font;
+  font-size: $fs-14;
+  color: $text-primary;
+  background: $bg-page;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// ── Primitives partagées ──────────────────────────────────────────────────
+
+.panel {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+}
+
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid $border;
+
+  h2 {
+    font-size: $fs-18;
+    font-weight: $fw-bold;
+    letter-spacing: $ls-tight;
+  }
+}
+
+.panel-sub {
+  margin-top: 6px;
+  font-size: $fs-13;
+  line-height: $lh-15;
+  color: $text-muted;
+}
+
+.panel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-top: 1px solid $border;
+  font-size: $fs-13;
+  color: $text-muted;
+}
+
+.page-head {
+  margin-bottom: 22px;
+
+  h1 {
+    font-size: $fs-30;
+    line-height: $lh-36;
+    font-weight: $fw-bold;
+    letter-spacing: $ls-title;
+  }
+}
+
+.page-sub {
+  margin-top: 8px;
+  max-width: 760px;
+  font-size: $fs-15;
+  line-height: $lh-19;
+  color: $text-muted;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  font-size: $fs-13;
+  color: $text-muted;
+
+  .here {
+    color: $text-primary;
+    font-weight: $fw-semibold;
+  }
+}
+
+// Tableaux
+.data-table {
+  th {
+    padding: 13px 8px;
+    background: $bg-subtle;
+    border-bottom: 1px solid $border;
+    font-size: $fs-13;
+    font-weight: $fw-semibold;
+    color: $text-muted;
+    text-align: left;
+    white-space: nowrap;
+
+    &:first-child {
+      padding-left: 22px;
+    }
+    &:last-child {
+      padding-right: 22px;
+    }
+  }
+
+  td {
+    padding: 15px 8px;
+    border-bottom: 1px solid $border;
+    font-size: $fs-14;
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: 22px;
+    }
+    &:last-child {
+      padding-right: 22px;
+    }
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .right {
+    text-align: right;
+  }
+}
+
+// Pastilles d'état
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: $radius-pill;
+  font-size: $fs-12;
+  font-weight: $fw-semibold;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  &.is-plain::before {
+    display: none;
+  }
+
+  &.pill-green {
+    background: $bg-green;
+    color: $green;
+  }
+  &.pill-red {
+    background: $bg-red;
+    color: $sorec-red;
+  }
+  &.pill-blue {
+    background: $bg-blue;
+    color: $blue;
+  }
+  &.pill-orange {
+    background: #fdf2ea;
+    color: $orange;
+  }
+  &.pill-grey {
+    background: $bg-subtle;
+    color: $text-muted;
+  }
+}
+
+// Boutons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  font-size: $fs-13;
+  font-weight: $fw-semibold;
+  white-space: nowrap;
+  transition: filter 0.15s ease, background 0.15s ease;
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.96);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-outline {
+  background: $white;
+  border-color: $border-strong;
+  color: $text-primary;
+}
+
+.btn-danger-soft {
+  background: $bg-red;
+  border-color: transparent;
+  color: $sorec-red;
+}
+
+.btn-dark {
+  background: $text-primary;
+  color: $white;
+}
+
+.btn-primary {
+  background: $sorec-red;
+  color: $white;
+}
+
+.btn-success-soft {
+  background: $bg-green;
+  color: $green;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 50%;
+  color: $text-muted;
+
+  &:hover {
+    background: $bg-subtle;
+  }
+
+  &.is-danger {
+    color: $sorec-red;
+  }
+  &.is-active {
+    background: $bg-green;
+    border-color: transparent;
+    color: $green;
+  }
+}
+
+// Champs
+.field {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: $input-height;
+  padding: 0 14px;
+  background: $white;
+  border: 1px solid $border-strong;
+  border-radius: $radius-pill;
+  color: $text-placeholder;
+
+  input,
+  select {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: $fs-14;
+    color: $text-primary;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: $fs-13;
+  font-weight: $fw-semibold;
+  color: $text-muted;
+}
+
+// Avatars
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: $white;
+  font-size: $fs-12;
+  font-weight: $fw-bold;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}

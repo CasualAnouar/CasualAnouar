@@ -1,0 +1,276 @@
+<app-page-header
+  section="nav.section.configuration"
+  current="nav.settings"
+  title="settings.title"
+  subtitle="settings.subtitle"
+/>
+
+<div class="panel">
+  <div class="panel-head">
+    <div>
+      <h2>{{ 'settings.usersTitle' | translate }}</h2>
+      <p class="panel-sub">
+        {{ 'settings.usersSubtitle' | translate: { count: staff().length } }}
+      </p>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="openInvite()">
+      <app-icon name="plus" [size]="15" />
+      {{ 'settings.inviteUser' | translate }}
+    </button>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>{{ 'table.user' | translate }}</th>
+        <th>{{ 'table.role' | translate }}</th>
+        <th class="hide-md">{{ 'table.permissions' | translate }}</th>
+        <th class="right">{{ 'table.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of staff(); track user.id) {
+        <tr>
+          <td>
+            <span class="user">
+              <app-avatar [label]="user.initials" [tone]="user.tone" [size]="34" />
+              <span class="user-id">
+                <span class="user-name">
+                  {{ user.name }}
+                  @if (user.isCurrentUser) {
+                    <span class="you">{{ 'settings.you' | translate }}</span>
+                  }
+                </span>
+                <span class="user-mail">{{ user.email }}</span>
+              </span>
+            </span>
+          </td>
+          <td>
+            <span class="pill" [class]="roleClass(user.role)">
+              {{ roleKey(user.role) | translate }}
+            </span>
+          </td>
+          <td class="hide-md permissions">{{ user.permissions }}</td>
+          <td class="right">
+            <div class="row-actions">
+              <button
+                type="button"
+                class="icon-btn"
+                [attr.aria-label]="'action.edit' | translate"
+              >
+                <app-icon name="edit" [size]="16" />
+              </button>
+              <button
+                type="button"
+                class="icon-btn is-danger"
+                [disabled]="user.isCurrentUser"
+                [attr.aria-label]="'action.delete' | translate"
+              >
+                <app-icon name="trash" [size]="16" />
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="panel categories-panel">
+  <div class="panel-head">
+    <div>
+      <h2>{{ 'settings.categoriesTitle' | translate }}</h2>
+      <p class="panel-sub">{{ 'settings.categoriesSubtitle' | translate }}</p>
+    </div>
+    <button type="button" class="btn btn-outline" (click)="openCategory()">
+      <app-icon name="plus" [size]="15" />
+      {{ 'action.add' | translate }}
+    </button>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>{{ 'table.category' | translate }}</th>
+        <th class="num">{{ 'table.topics' | translate }}</th>
+        <th class="num">{{ 'table.messages' | translate }}</th>
+        <th>{{ 'table.status' | translate }}</th>
+        <th class="right">{{ 'table.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of categories(); track row.id) {
+        <tr [class.is-hidden-row]="row.status === 'hidden'">
+          <td>
+            <span class="cat">
+              <i class="bullet" [style.background]="row.color"></i>
+              {{ row.label }}
+            </span>
+          </td>
+          <td class="num">{{ row.topics }}</td>
+          <td class="num">{{ row.messages }}</td>
+          <td>
+            <span
+              class="pill"
+              [class.pill-green]="row.status === 'published'"
+              [class.pill-red]="row.status === 'hidden'"
+            >
+              {{ 'categoryStatus.' + row.status | translate }}
+            </span>
+          </td>
+          <td class="right">
+            <div class="row-actions">
+              <button
+                type="button"
+                class="icon-btn"
+                [attr.aria-label]="'action.edit' | translate"
+              >
+                <app-icon name="edit" [size]="16" />
+              </button>
+              <button
+                type="button"
+                class="icon-btn"
+                (click)="toggleCategory(row)"
+                [attr.aria-label]="'action.toggleVisibility' | translate"
+              >
+                <app-icon
+                  [name]="row.status === 'published' ? 'eye-off' : 'eye'"
+                  [size]="16"
+                />
+              </button>
+              <button
+                type="button"
+                class="icon-btn is-danger"
+                (click)="removeCategory(row)"
+                [attr.aria-label]="'action.delete' | translate"
+              >
+                <app-icon name="trash" [size]="16" />
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="panel-foot">
+    <span>
+      {{
+        'settings.categoriesFoot'
+          | translate: { count: categories().length, published: publishedCount() }
+      }}
+    </span>
+  </div>
+</div>
+
+@if (inviteOpen()) {
+  <app-modal
+    title="settings.invite.title"
+    description="settings.invite.description"
+    confirmLabel="settings.invite.confirm"
+    note="settings.invite.note"
+    (dismissed)="inviteOpen.set(false)"
+    (confirmed)="confirmInvite()"
+  >
+    <div>
+      <label class="field-label" for="u-name">{{ 'settings.invite.name' | translate }}</label>
+      <div class="field">
+        <input
+          id="u-name"
+          type="text"
+          [placeholder]="'settings.invite.namePlaceholder' | translate"
+          [value]="inviteName()"
+          (input)="inviteName.set($any($event.target).value)"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label class="field-label" for="u-mail">{{ 'settings.invite.email' | translate }}</label>
+      <div class="field">
+        <input
+          id="u-mail"
+          type="email"
+          placeholder="prenom.nom@sorec.ma"
+          [value]="inviteEmail()"
+          (input)="inviteEmail.set($any($event.target).value)"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label class="field-label" for="u-role">{{ 'table.role' | translate }}</label>
+      <div class="field select">
+        <select
+          id="u-role"
+          [value]="inviteRole()"
+          (change)="inviteRole.set($any($event.target).value)"
+        >
+          <option value="moderator-m">{{ 'role.moderator-m' | translate }}</option>
+          <option value="moderator-f">{{ 'role.moderator-f' | translate }}</option>
+          <option value="support">{{ 'role.support' | translate }}</option>
+          <option value="admin">{{ 'role.admin' | translate }}</option>
+        </select>
+        <app-icon name="chevron-down" [size]="16" />
+      </div>
+      <p class="field-hint">{{ 'settings.invite.roleHint' | translate }}</p>
+    </div>
+  </app-modal>
+}
+
+@if (categoryOpen()) {
+  <app-modal
+    title="settings.category.title"
+    description="settings.category.description"
+    confirmLabel="settings.category.confirm"
+    note="settings.category.note"
+    (dismissed)="categoryOpen.set(false)"
+    (confirmed)="confirmCategory()"
+  >
+    <div>
+      <label class="field-label" for="c-name">
+        {{ 'settings.category.name' | translate }}
+      </label>
+      <div class="field">
+        <input
+          id="c-name"
+          type="text"
+          [placeholder]="'settings.category.namePlaceholder' | translate"
+          [value]="categoryName()"
+          (input)="categoryName.set($any($event.target).value)"
+        />
+      </div>
+    </div>
+
+    <div>
+      <p class="field-label">{{ 'settings.category.color' | translate }}</p>
+      <div class="swatches">
+        @for (color of palette; track color) {
+          <button
+            type="button"
+            class="swatch"
+            [class.is-selected]="categoryColor() === color"
+            [style.background]="color"
+            [attr.aria-label]="color"
+            (click)="categoryColor.set(color)"
+          ></button>
+        }
+      </div>
+    </div>
+
+    <div>
+      <label class="field-label" for="c-status">{{ 'table.status' | translate }}</label>
+      <div class="field select">
+        <select
+          id="c-status"
+          [value]="categoryStatus()"
+          (change)="categoryStatus.set($any($event.target).value)"
+        >
+          <option value="published">{{ 'settings.category.published' | translate }}</option>
+          <option value="hidden">{{ 'settings.category.hidden' | translate }}</option>
+        </select>
+        <app-icon name="chevron-down" [size]="16" />
+      </div>
+    </div>
+  </app-modal>
+}

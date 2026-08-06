@@ -1,0 +1,202 @@
+<app-page-header
+  section="nav.section.moderation"
+  current="nav.queue"
+  title="queue.title"
+  subtitle="queue.subtitle"
+/>
+
+<div class="tabs" role="tablist">
+  <button
+    type="button"
+    role="tab"
+    class="tab"
+    [class.is-active]="activeTab() === 'pending'"
+    [attr.aria-selected]="activeTab() === 'pending'"
+    (click)="selectTab('pending')"
+  >
+    {{ 'queue.tab.pending' | translate }}
+    <span class="tab-count">{{ pendingCount() }}</span>
+  </button>
+  <button
+    type="button"
+    role="tab"
+    class="tab"
+    [class.is-active]="activeTab() === 'handled'"
+    [attr.aria-selected]="activeTab() === 'handled'"
+    (click)="selectTab('handled')"
+  >
+    {{ 'queue.tab.handled' | translate }}
+    <span class="tab-count">{{ handledCount() }}</span>
+  </button>
+</div>
+
+<div class="toolbar">
+  <label class="field toolbar-search">
+    <app-icon name="search" [size]="17" />
+    <input
+      type="search"
+      [placeholder]="'queue.searchPlaceholder' | translate"
+      [value]="search()"
+      (input)="onSearch($any($event.target).value)"
+    />
+  </label>
+
+  <button type="button" class="btn btn-outline sort-btn">
+    <app-icon name="sliders" [size]="15" />
+    <span class="sort-lbl">{{ 'queue.sortBy' | translate }}</span>
+    <strong>{{ 'queue.sortPriority' | translate }}</strong>
+    <app-icon name="chevron-down" [size]="15" />
+  </button>
+</div>
+
+<div class="panel">
+  @if (activeTab() === 'pending') {
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>{{ 'table.reportedContent' | translate }}</th>
+          <th>{{ 'table.author' | translate }}</th>
+          <th class="hide-md">{{ 'table.reason' | translate }}</th>
+          <th class="num">{{ 'table.reports' | translate }}</th>
+          <th>{{ 'table.priority' | translate }}</th>
+          <th class="hide-md">{{ 'table.received' | translate }}</th>
+          <th class="right">{{ 'table.actions' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (report of pending(); track report.id) {
+          <tr>
+            <td class="cell-content">
+              <p class="excerpt">« {{ report.excerpt }} »</p>
+              <p class="source">{{ report.source }}</p>
+            </td>
+            <td>
+              <span class="author">
+                <app-avatar
+                  [label]="report.author.initials"
+                  [tone]="report.author.tone"
+                  [size]="30"
+                />
+                {{ report.author.handle }}
+              </span>
+            </td>
+            <td class="hide-md">{{ report.reason }}</td>
+            <td class="num">
+              <span class="flag-count">
+                <app-icon name="flag" [size]="14" />
+                {{ report.reportCount }}
+              </span>
+            </td>
+            <td>
+              <span class="priority" [class]="'priority-' + report.priority">
+                <app-icon [name]="priorityIcon(report.priority)" [size]="15" />
+                {{ priorityKey(report.priority) | translate }}
+              </span>
+            </td>
+            <td class="hide-md when">{{ report.receivedAt }}</td>
+            <td class="right">
+              <div class="row-actions">
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  (click)="decide(report, 'approved')"
+                >
+                  <app-icon name="check-circle" [size]="15" />
+                  {{ 'action.approve' | translate }}
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger-soft"
+                  (click)="decide(report, 'deleted')"
+                >
+                  <app-icon name="trash" [size]="15" />
+                  {{ 'action.delete' | translate }}
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  (click)="decide(report, 'blocked')"
+                >
+                  <app-icon name="ban" [size]="15" />
+                  {{ 'action.block' | translate }}
+                </button>
+              </div>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="7" class="empty">{{ 'queue.emptyPending' | translate }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>{{ 'table.reportedContent' | translate }}</th>
+          <th>{{ 'table.author' | translate }}</th>
+          <th class="hide-md">{{ 'table.reason' | translate }}</th>
+          <th class="num">{{ 'table.reports' | translate }}</th>
+          <th>{{ 'table.decision' | translate }}</th>
+          <th class="hide-md">{{ 'table.handledAt' | translate }}</th>
+          <th>{{ 'table.handledBy' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (report of handled(); track report.id) {
+          <tr>
+            <td class="cell-content">
+              <p class="excerpt">« {{ report.excerpt }} »</p>
+              <p class="source">{{ report.source }}</p>
+            </td>
+            <td>
+              <span class="author">
+                <app-avatar
+                  [label]="report.author.initials"
+                  [tone]="report.author.tone"
+                  [size]="30"
+                />
+                {{ report.author.handle }}
+              </span>
+            </td>
+            <td class="hide-md">{{ report.reason }}</td>
+            <td class="num">
+              <span class="flag-count">
+                <app-icon name="flag" [size]="14" />
+                {{ report.reportCount }}
+              </span>
+            </td>
+            <td>
+              <span
+                class="pill"
+                [class.pill-green]="report.decision === 'approved'"
+                [class.pill-red]="report.decision === 'deleted'"
+                [class.pill-grey]="report.decision === 'blocked'"
+              >
+                {{ decisionKey(report.decision) | translate }}
+              </span>
+            </td>
+            <td class="hide-md when">{{ report.handledAt }}</td>
+            <td class="when">{{ report.handledBy }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="7" class="empty">{{ 'queue.emptyHandled' | translate }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+
+  <div class="panel-foot">
+    <span>
+      @if (activeTab() === 'pending') {
+        {{ 'queue.footPending' | translate: { count: pending().length } }}
+      } @else {
+        {{ 'queue.footHandled' | translate: { count: handled().length } }}
+      }
+    </span>
+    <span>{{ 'queue.footNote' | translate }}</span>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+// SOREC 360 — Back-office Communauté
+// Source unique de vérité pour les tokens repris de la maquette Figma « BO Community ».
+
+// ── Marque ────────────────────────────────────────────────────────────────
+$sorec-red: #e6110a;
+$sorec-red-dark: #b81c27;
+$gradient-primary: linear-gradient(162.14deg, #e6110a 5.3%, #b81c27 94.7%);
+
+// ── Texte ─────────────────────────────────────────────────────────────────
+$text-primary: #2f3539;
+$text-muted: #6b7276;
+$text-subtle: #9aa0a3;
+$text-placeholder: #b0b0b0;
+
+// ── Fonds ─────────────────────────────────────────────────────────────────
+$white: #ffffff;
+$bg-page: #ffffff;
+$bg-sidebar: #f3f5f6;
+$bg-subtle: #f7f7f7;
+$bg-green: #eff8ec;
+$bg-blue: #edeff7;
+$bg-red: #fdf1f0;
+$bg-overlay: rgba(47, 53, 57, 0.45);
+
+// ── Bordures ──────────────────────────────────────────────────────────────
+$border: #ededed;
+$border-strong: #d9d9d9;
+
+// ── Sémantique ────────────────────────────────────────────────────────────
+$blue: #3f4891;
+$green: #4a9438;
+$green-light: #7ec26c;
+$orange: #b85a1e;
+$orange-light: #fea87a;
+$grey-neutral: #b0b0b0;
+
+// Palette de couleurs des catégories (modale « Ajouter une catégorie »)
+$category-colors: (
+  'blue': $blue,
+  'green-light': $green-light,
+  'orange-light': $orange-light,
+  'red': $sorec-red,
+  'orange': $orange,
+  'grey': $grey-neutral,
+  'green': $green,
+  'dark': $text-primary,
+);
+
+// ── Typographie ───────────────────────────────────────────────────────────
+$font: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+$fs-10: 10.5px;
+$fs-12: 12px;
+$fs-13: 13px;
+$fs-14: 14px;
+$fs-15: 15px;
+$fs-16: 16px;
+$fs-18: 18px;
+$fs-30: 30px;
+$fs-32: 32px;
+
+$lh-15: 15.6px;
+$lh-17: 17.6px;
+$lh-19: 19.6px;
+$lh-36: 36px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+$ls-tight: -0.16px;
+$ls-title: -0.6px;
+$ls-upper: 0.875px;
+
+// ── Dimensions ────────────────────────────────────────────────────────────
+$sidebar-width: 242px;
+$topbar-height: 64px;
+$content-max: 1440px;
+$gutter: 26px;
+
+$radius-pill: 999px;
+$radius-sm: 4px;
+$radius-md: 10px;
+$radius-lg: 14px;
+
+$row-height: 40px;
+$input-height: 39px;
+
+// ── Ombres ────────────────────────────────────────────────────────────────
+$shadow-card: 0 1px 2px rgba(47, 53, 57, 0.04);
+$shadow-modal: 0 24px 60px rgba(47, 53, 57, 0.22);
+$shadow-pop: 0 6px 18px rgba(47, 53, 57, 0.12);

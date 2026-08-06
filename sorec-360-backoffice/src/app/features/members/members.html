@@ -1,0 +1,172 @@
+<app-page-header
+  section="nav.section.moderation"
+  current="nav.members"
+  title="members.title"
+  subtitle="members.subtitle"
+/>
+
+<section class="kpis">
+  <div class="kpi">
+    <div class="kpi-head">
+      <app-icon name="users" [size]="17" />
+      <span class="k-label">{{ 'members.kpi.registered' | translate }}</span>
+    </div>
+    <p class="k-value">{{ totalCount }}</p>
+    <p class="k-foot">{{ 'members.kpi.registeredFoot' | translate }}</p>
+  </div>
+
+  <div class="kpi kpi-green">
+    <div class="kpi-head">
+      <app-icon name="activity" [size]="17" />
+      <span class="k-label">{{ 'members.kpi.active' | translate }}</span>
+    </div>
+    <p class="k-value">{{ activeCount }}</p>
+    <p class="k-foot">{{ 'members.kpi.activeFoot' | translate }}</p>
+  </div>
+
+  <div class="kpi kpi-red">
+    <div class="kpi-head">
+      <app-icon name="ban" [size]="17" />
+      <span class="k-label">{{ 'members.kpi.blocked' | translate }}</span>
+    </div>
+    <p class="k-value">{{ blockedCount }}</p>
+    <p class="k-foot">{{ 'members.kpi.blockedFoot' | translate }}</p>
+  </div>
+</section>
+
+<div class="filters">
+  <div class="filter">
+    <label class="field-label" for="m-sort">{{ 'members.sortBy' | translate }}</label>
+    <div class="field select">
+      <select id="m-sort" [value]="sort()" (change)="sort.set($any($event.target).value)">
+        <option value="reports">{{ 'members.sortReports' | translate }}</option>
+        <option value="messages">{{ 'members.sortMessages' | translate }}</option>
+        <option value="reputation">{{ 'members.sortReputation' | translate }}</option>
+      </select>
+      <app-icon name="chevron-down" [size]="16" />
+    </div>
+  </div>
+
+  <div class="filter">
+    <label class="field-label" for="m-status">{{ 'members.status' | translate }}</label>
+    <div class="field select">
+      <select
+        id="m-status"
+        [value]="statusFilter()"
+        (change)="statusFilter.set($any($event.target).value)"
+      >
+        <option value="all">{{ 'members.allStatuses' | translate }}</option>
+        <option value="active">{{ 'memberStatus.active' | translate }}</option>
+        <option value="blocked">{{ 'memberStatus.blocked' | translate }}</option>
+      </select>
+      <app-icon name="chevron-down" [size]="16" />
+    </div>
+  </div>
+
+  <label class="field filter-search">
+    <app-icon name="search" [size]="17" />
+    <input
+      type="search"
+      [placeholder]="'members.searchPlaceholder' | translate"
+      [value]="search()"
+      (input)="onSearch($any($event.target).value)"
+    />
+  </label>
+</div>
+
+<div class="panel">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>{{ 'table.member' | translate }}</th>
+        <th class="num">{{ 'table.topics' | translate }}</th>
+        <th class="num">{{ 'table.messages' | translate }}</th>
+        <th class="num">{{ 'table.reports' | translate }}</th>
+        <th>{{ 'table.reputation' | translate }}</th>
+        <th>{{ 'table.status' | translate }}</th>
+        <th class="right">{{ 'table.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (member of rows(); track member.id) {
+        <tr>
+          <td>
+            <span class="member">
+              <app-avatar [label]="member.initials" [tone]="member.tone" [size]="34" />
+              <span class="member-id">
+                <span class="member-handle">{{ member.handle }}</span>
+                <span class="member-since">
+                  {{ 'members.registeredOn' | translate }} {{ member.registeredAt }}
+                </span>
+              </span>
+            </span>
+          </td>
+          <td class="num">{{ member.topics }}</td>
+          <td class="num">{{ member.messages }}</td>
+          <td class="num">
+            <span class="report-badge">{{ member.reports }}</span>
+          </td>
+          <td>
+            <div class="rep">
+              <p class="rep-head">
+                <strong [style.color]="tierColor(member.tier)">{{ member.reputation }}</strong>
+                <span>{{ tierKey(member.tier) | translate }}</span>
+              </p>
+              <div class="rep-bar">
+                <span
+                  [style.width.%]="member.reputation"
+                  [style.background]="tierColor(member.tier)"
+                ></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <span
+              class="pill"
+              [class.pill-green]="member.status === 'active'"
+              [class.pill-red]="member.status === 'blocked'"
+            >
+              {{ 'memberStatus.' + member.status | translate }}
+            </span>
+          </td>
+          <td class="right">
+            @if (member.status === 'blocked') {
+              <button
+                type="button"
+                class="btn btn-success-soft"
+                (click)="toggleStatus(member)"
+              >
+                <app-icon name="check-circle" [size]="15" />
+                {{ 'action.reactivate' | translate }}
+              </button>
+            } @else {
+              <button type="button" class="btn btn-dark" (click)="toggleStatus(member)">
+                <app-icon name="ban" [size]="15" />
+                {{ 'action.block' | translate }}
+              </button>
+            }
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="7" class="empty">{{ 'members.empty' | translate }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="panel-foot">
+    <span>
+      {{ 'members.foot' | translate: { shown: rows().length, total: totalCount } }}
+    </span>
+    <div class="pager">
+      <button type="button" class="icon-btn" disabled>
+        <app-icon name="chevron-left" [size]="16" />
+      </button>
+      <span class="pager-label">1 / 3</span>
+      <button type="button" class="icon-btn">
+        <app-icon name="chevron-right" [size]="16" />
+      </button>
+    </div>
+  </div>
+</div>

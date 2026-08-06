@@ -1,0 +1,110 @@
+@use 'variables' as *;
+
+.categories-panel {
+  margin-top: 24px;
+}
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-id {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: $fs-14;
+  font-weight: $fw-semibold;
+}
+
+.you {
+  padding: 2px 8px;
+  border-radius: $radius-pill;
+  background: $bg-subtle;
+  color: $text-muted;
+  font-size: $fs-12;
+  font-weight: $fw-semibold;
+}
+
+.user-mail {
+  font-size: $fs-12;
+  color: $text-muted;
+}
+
+.permissions {
+  font-size: $fs-13;
+  color: $text-muted;
+}
+
+.cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: $fs-14;
+  font-weight: $fw-medium;
+}
+
+.bullet {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.is-hidden-row {
+  .cat {
+    color: $text-subtle;
+  }
+}
+
+.row-actions {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.select {
+  position: relative;
+
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
+}
+
+.field-hint {
+  margin-top: 8px;
+  font-size: $fs-12;
+  color: $text-muted;
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(47, 53, 57, 0.12);
+
+  &.is-selected {
+    border-color: $white;
+    box-shadow: 0 0 0 2px $text-primary;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hide-md {
+    display: none;
+  }
+}

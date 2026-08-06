@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: $white;
+  font-weight: $fw-bold;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.tone-blue {
+  background: $blue;
+}
+.tone-orange {
+  background: $orange;
+}
+.tone-dark {
+  background: $text-primary;
+}
+.tone-green {
+  background: $green;
+}
+.tone-red {
+  background: $sorec-red;
+}
+.tone-grey {
+  background: $text-subtle;
+}
