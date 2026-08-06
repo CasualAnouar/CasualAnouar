@@ -9,7 +9,7 @@
 <br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Anouar_DADAS-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anouar-dadas/)
-[![Location](https://img.shields.io/badge/Berrechid-Morocco-C1272D?style=flat-square&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Berrechid)
+[![Location](https://img.shields.io/badge/Rabat-Morocco-C1272D?style=flat-square&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Rabat)
 [![Followers](https://img.shields.io/github/followers/CasualAnouar?style=flat-square&logo=github&label=Followers&color=1f6feb)](https://github.com/CasualAnouar?tab=followers)
 [![Profile views](https://komarev.com/ghpvc/?username=CasualAnouar&style=flat-square&label=Views&color=8250df)](https://github.com/CasualAnouar)
 
@@ -21,15 +21,13 @@
 
 ## 🧭 whoami
 
-Software developer at **[SOREC](https://www.sorec.ma)** *(Société Royale d'Encouragement du Cheval)*, where I build
-enterprise-grade web applications. Day to day that means Angular frontends, Spring Boot microservices and Liferay DXP
-portals, wired together into platforms that real people depend on.
+Software developer building enterprise-grade web applications. Day to day that means Angular frontends, Spring Boot
+microservices and Liferay DXP portals, wired together into platforms that real people depend on.
 
 ```ts
 const anouar = {
   role:      "Senior Fullstack Engineer",
-  company:   "SOREC — Société Royale d'Encouragement du Cheval",
-  location:  "Berrechid, Morocco 🇲🇦",
+  location:  "Rabat, Morocco 🇲🇦",
   focus:     ["Angular 12→21+ frontends", "Spring Boot microservices", "Liferay DXP 7.4 portals"],
   learning:  ["Kubernetes", "GraphQL", "React Native"],
   speaks:    ["العربية", "Français", "English"],
@@ -49,7 +47,7 @@ const anouar = {
 | **Auth & APIs** | ![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white) ![OAuth2](https://img.shields.io/badge/OAuth2_·_SSO-EB5424?style=flat-square&logo=auth0&logoColor=white) ![REST](https://img.shields.io/badge/REST-005571?style=flat-square&logo=fastapi&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black) |
 | **Enterprise** | ![Liferay DXP](https://img.shields.io/badge/Liferay_DXP_7.4-1ABC9C?style=flat-square&logo=liferay&logoColor=white) ![OSGi](https://img.shields.io/badge/OSGi-6E4B7B?style=flat-square&logoColor=white) ![Microservices](https://img.shields.io/badge/Microservices-0052CC?style=flat-square&logo=apachekafka&logoColor=white) |
 | **Data** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white) |
-| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![GitLab CI](https://img.shields.io/badge/GitLab_CI/CD-FC6D26?style=flat-square&logo=gitlab&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![GitLab CI/CD](https://img.shields.io/static/v1?label=&message=GitLab%20CI%2FCD&color=FC6D26&style=flat-square&logo=gitlab&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
 | **Daily drivers** | ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white) ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white) ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white) ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white) |
 
 ---
@@ -61,7 +59,7 @@ const anouar = {
 | 🔍 | **lost-and-found** | Graduation project — a platform for reporting and reuniting lost items with their owners | `HTML` `Web` | 🔒 Private repo |
 | 🎮 | **InFamouss** | Community hub for the InFamouss streamer — *Ghost Moves, Zero Noise* | `TypeScript` | [infamouss.net](https://www.infamouss.net) |
 | 🌸 | **naroma-shop** | Perfume e-commerce storefront | `TypeScript` | [naroma-shop.vercel.app](https://naroma-shop.vercel.app) |
-| 🤖 | **nyx-bot** | Discord bot + web dashboard for the Nyx community | `TypeScript` `Node.js` | [nyx-bot-web.vercel.app](https://nyx-bot-web-fawn.vercel.app) |
+| 🤖 | **nyx-bot** | Discord bot + web dashboard for the Nyx community | `TypeScript` `Node.js` | [nyx-bot-web-fawn.vercel.app](https://nyx-bot-web-fawn.vercel.app) |
 
 > Most of my work lives in private repositories, so the contribution graph below tells a fuller story than the repo list does.
 
