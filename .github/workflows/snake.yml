@@ -21,7 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build the snake SVGs
-        uses: Platane/snk@v3
+        # pinned to the v3 commit: this job holds contents: write, so a moving
+        # tag would let an upstream compromise push to this repo
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
@@ -29,7 +31,7 @@ jobs:
             dist/snake-light.svg?palette=github-light&color_snake=#8250df
 
       - name: Publish them to the output branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
           target_branch: output
           build_dir: dist
