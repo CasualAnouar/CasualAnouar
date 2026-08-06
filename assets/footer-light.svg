@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120" role="img" aria-label="">
+  <defs>
+    <linearGradient id="w1" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0969da" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#8250df" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0f766e" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f766e" stop-opacity="0.2"/>
+      <stop offset="0.5" stop-color="#0969da" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#8250df" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="w3" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8250df" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#0969da" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#1a7f37" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop offset="0" stop-color="#0969da" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#0969da" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#0969da" stop-opacity="0"/>
+      <animate attributeName="x1" values="-900;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;900" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="8" width="900" height="1.5" fill="url(#hair)"/>
+
+  <g transform="translate(0,18)">
+    <path fill="url(#w2)" d="M0,60 C112,30 168,90 225,60 C281,30 337,90 450,60 C562,30 618,90 675,60 C731,30 787,90 900,60 L900,120 L0,120 Z">
+      <animate attributeName="d" dur="11s" repeatCount="indefinite"
+        values="M0,60 C112,30 168,90 225,60 C281,30 337,90 450,60 C562,30 618,90 675,60 C731,30 787,90 900,60 L900,120 L0,120 Z;
+                M0,60 C112,90 168,30 225,60 C281,90 337,30 450,60 C562,90 618,30 675,60 C731,90 787,30 900,60 L900,120 L0,120 Z;
+                M0,60 C112,30 168,90 225,60 C281,30 337,90 450,60 C562,30 618,90 675,60 C731,30 787,90 900,60 L900,120 L0,120 Z"/>
+    </path>
+  </g>
+
+  <g transform="translate(0,34)">
+    <path fill="url(#w1)" d="M0,60 C112,90 168,30 225,60 C281,90 337,30 450,60 C562,90 618,30 675,60 C731,90 787,30 900,60 L900,120 L0,120 Z">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="M0,60 C112,90 168,30 225,60 C281,90 337,30 450,60 C562,90 618,30 675,60 C731,90 787,30 900,60 L900,120 L0,120 Z;
+                M0,60 C112,30 168,90 225,60 C281,30 337,90 450,60 C562,30 618,90 675,60 C731,30 787,90 900,60 L900,120 L0,120 Z;
+                M0,60 C112,90 168,30 225,60 C281,90 337,30 450,60 C562,90 618,30 675,60 C731,90 787,30 900,60 L900,120 L0,120 Z"/>
+    </path>
+  </g>
+
+  <g transform="translate(0,52)">
+    <path fill="none" stroke="url(#w3)" stroke-width="2" stroke-linecap="round"
+          d="M0,60 C112,34 168,86 225,60 C281,34 337,86 450,60 C562,34 618,86 675,60 C731,34 787,86 900,60">
+      <animate attributeName="d" dur="6.5s" repeatCount="indefinite"
+        values="M0,60 C112,34 168,86 225,60 C281,34 337,86 450,60 C562,34 618,86 675,60 C731,34 787,86 900,60;
+                M0,60 C112,86 168,34 225,60 C281,86 337,34 450,60 C562,86 618,34 675,60 C731,86 787,34 900,60;
+                M0,60 C112,34 168,86 225,60 C281,34 337,86 450,60 C562,34 618,86 675,60 C731,34 787,86 900,60"/>
+    </path>
+  </g>
+</svg>
